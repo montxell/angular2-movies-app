@@ -41,6 +41,16 @@ export class MoviesService {
   }
 
 
+  getKidsMostPopular() {
+
+    // To use jsonp we need a callback ->  callback=JSONP_CALLBACK
+    let url = `${ this.urlMoviedb }/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`; //&language=es
+
+    return this.jsonp.get( url )
+               .map( res => res.json() );
+  }
+
+
   searchMovie( text: string ) {
 
     let url = `${ this.urlMoviedb }/search/movie?query=${ text }&sort_by=popularity.desc&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`;
