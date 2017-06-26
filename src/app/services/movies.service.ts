@@ -10,6 +10,7 @@ export class MoviesService {
   private apiKey: string = "6ad6623787b6194dfece894e0762844e";
   private urlMoviedb: string = "https://api.themoviedb.org/3";
 
+
   constructor( private jsonp: Jsonp ) { }
 
 
@@ -27,7 +28,7 @@ export class MoviesService {
     let url = `${ this.urlMoviedb }/discover/movie?primary_release_date.gte=${ fromDayString }&primary_release_date.lte=${ toDayString }&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`; //&language=es
 
     return this.jsonp.get( url )
-               .map( res => res.json() );
+               .map( res => res.json().results ); // We add results to get the array of movies
   }
 
 
@@ -37,7 +38,7 @@ export class MoviesService {
     let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`; //&language=es
 
     return this.jsonp.get( url )
-               .map( res => res.json() );
+               .map( res => res.json().results ); // We add results to get the array of movies
   }
 
 
@@ -47,7 +48,7 @@ export class MoviesService {
     let url = `${ this.urlMoviedb }/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`; //&language=es
 
     return this.jsonp.get( url )
-               .map( res => res.json() );
+               .map( res => res.json().results ); // We add results to get the array of movies
   }
 
 
@@ -56,7 +57,7 @@ export class MoviesService {
     let url = `${ this.urlMoviedb }/search/movie?query=${ text }&sort_by=popularity.desc&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`;
 
     return this.jsonp.get( url )
-               .map( res => res.json() );
+               .map( res => res.json().results ); // We add results to get the array of movies
   }
 
 
