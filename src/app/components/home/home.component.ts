@@ -9,11 +9,15 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class HomeComponent implements OnInit {
 
+  cinemaListings: any;
+
+
   constructor( public _ms: MoviesService ) {
 
     this._ms.getCinemaListings()
         .subscribe( data => {
           console.log(data);
+          this.cinemaListings = data;
         })
   }
 

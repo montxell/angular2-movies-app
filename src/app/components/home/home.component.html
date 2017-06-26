@@ -12,24 +12,24 @@
   <h1>Cinema Listings</h1>
   <hr>
 
-  <div class="row">
+  <div class="row" *ngIf="cinemaListings">
 
     <div class="col-sm-6">
 
       <div class="row">
         <div class="col-md-12 div-pic-1"
-             [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/w300/5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg)'}">
+             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[0] | movieImage ) + ')'}">
         </div>
       </div>
 
 
       <div class="row">
         <div class="col-sm-6 div-pic-2"
-             [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/w300/5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg)'}">
+             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[1] | movieImage ) + ')'}">
         </div>
 
         <div class="col-sm-6 div-pic-2"
-             [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/w300/5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg)'}">
+             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[2] | movieImage ) + ')'}">
         </div>
       </div>
 
@@ -40,18 +40,18 @@
 
       <div class="row">
         <div class="col-sm-6 div-pic-2"
-             [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/w300/5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg)'}">
+             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[3] | movieImage ) + ')'}">
         </div>
 
         <div class="col-sm-6 div-pic-2"
-             [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/w300/5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg)'}">
+             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[4] | movieImage ) + ')'}">
         </div>
       </div>
 
 
       <div class="row">
         <div class="col-md-12 div-pic-1"
-             [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/w300/5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg)'}">
+             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[5] | movieImage ) + ')'}">
         </div>
       </div>
 
