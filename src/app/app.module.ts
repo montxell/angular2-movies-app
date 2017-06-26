@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { SearchComponent } from './components/search/search.component';
 import { MovieImagePipe } from './pipes/movie-image.pipe';
+import { GalleryComponent } from './components/home/gallery.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MovieImagePipe } from './pipes/movie-image.pipe';
     HomeComponent,
     MovieComponent,
     SearchComponent,
-    MovieImagePipe
+    MovieImagePipe,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

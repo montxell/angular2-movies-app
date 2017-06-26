@@ -9,54 +9,21 @@
 <div class="container">
   <br>
 
-  <h1>Cinema Listings</h1>
-  <hr>
+  <app-gallery  title="Cinema Listings"
+                [movies]="cinemaListings">
+  </app-gallery>
 
-  <div class="row" *ngIf="cinemaListings">
+  <br><br>
 
-    <div class="col-sm-6">
+  <app-gallery  title="Most Popular"
+                [movies]="mostPopular">
+  </app-gallery>
 
-      <div class="row">
-        <div class="col-md-12 div-pic-1"
-             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[0] | movieImage ) + ')'}">
-        </div>
-      </div>
+  <br><br>
 
+  <app-gallery  title="Kids Most Popular"
+                [movies]="kidsMostPopular">
+  </app-gallery>
 
-      <div class="row">
-        <div class="col-sm-6 div-pic-2"
-             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[1] | movieImage ) + ')'}">
-        </div>
-
-        <div class="col-sm-6 div-pic-2"
-             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[2] | movieImage ) + ')'}">
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="col-sm-6">
-
-      <div class="row">
-        <div class="col-sm-6 div-pic-2"
-             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[3] | movieImage ) + ')'}">
-        </div>
-
-        <div class="col-sm-6 div-pic-2"
-             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[4] | movieImage ) + ')'}">
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-md-12 div-pic-1"
-             [ngStyle]="{'background-image': 'url( ' + ( cinemaListings.results[5] | movieImage ) + ')'}">
-        </div>
-      </div>
-
-    </div>
-
-  </div>
 
 </div>
