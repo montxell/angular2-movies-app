@@ -15,7 +15,7 @@ export class MovieImagePipe implements PipeTransform {
       if ( movie.poster_path ) {
         return url + movie.poster_path;
       } else {
-        return "assets/img/no-image.gif";
+        return "assets/img/no-image.jpg";
       }
     }
   }
