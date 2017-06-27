@@ -39,6 +39,10 @@ body {
   background-size: cover;
 }
 
+.button-margin {
+  margin-top: 25px;
+}
+
 
 
 /* Animations */
