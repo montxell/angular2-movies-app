@@ -27,8 +27,19 @@
       </p>
 
       <h5>Rating</h5>
-      <span class="badge badge-primary"> {{ movie.vote_average }} </span>
-      
+      <span class="badge badge-primary">
+        {{ movie.vote_average }}
+      </span>
+
+      <div class="button-margin">
+        <button [routerLink]="['/' + goBackTo, searchText]"
+                type="button"
+                class="btn btn-outline-danger">
+            Go back
+        </button>
+      </div>
+
+
     </div>
 
   </div>
