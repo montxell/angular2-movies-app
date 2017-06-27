@@ -67,4 +67,13 @@ export class MoviesService {
   }
 
 
+  getMovie( id: string ) {
+
+    let url = `${ this.urlMoviedb }/movie/${ id }?&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`; //&language=es
+
+    return this.jsonp.get( url )
+               .map( res => res.json() ); // We don't need res.json().results
+  }
+
+
 }
