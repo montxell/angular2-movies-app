@@ -9,24 +9,32 @@ export class MovieImagePipe implements PipeTransform {
 
     let url = "http://image.tmdb.org/t/p/w500";
 
+    let posterUrl = url + movie.poster_path;
+    let backdropUrl = url + movie.backdrop_path;
+    let noImage = "assets/img/no-image.jpg";
+
+
     if ( poster ) {
-      if ( movie.poster_path ) {
-        return url + movie.poster_path;
+      if ( movie.poster_path != null ) {
+        return posterUrl;
       } else {
-        return "assets/img/no-image.jpg";
+        return noImage;
       }
-    }
 
-
-    if ( movie.backdrop_path ) {
-      return url + movie.backdrop_path;
     } else {
-      if ( movie.poster_path ) {
-        return url + movie.poster_path;
+
+      if ( movie.backdrop_path != null ) {
+        return backdropUrl;
       } else {
-        return "assets/img/no-image.jpg";
+        if ( movie.poster_path != null ) {
+          return posterUrl;
+        } else {
+          return noImage;
+        }
       }
+
     }
+
   }
 
 }
